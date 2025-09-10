@@ -1,24 +1,20 @@
 package com.example.auth;
 
-
 import java.sql.*;
 import java.util.Optional;
 import java.util.Properties;
 import java.io.InputStream;
-
 
 public class JdbcUserDao {
 private final String url;
 private final String user;
 private final String pass;
 
-
 public JdbcUserDao(Properties cfg) {
 this.url = cfg.getProperty("db.url");
 this.user = cfg.getProperty("db.user");
 this.pass = cfg.getProperty("db.pass");
 }
-
 
 private Connection getConn() throws SQLException {
 return DriverManager.getConnection(url, user, pass);
@@ -62,4 +58,5 @@ public User(int id, String username, String passwordHash, String role) {
 this.id = id; this.username = username; this.passwordHash = passwordHash; this.role = role;
 }
 }
+
 }
