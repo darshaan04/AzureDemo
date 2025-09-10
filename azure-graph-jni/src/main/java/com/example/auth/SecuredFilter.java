@@ -12,7 +12,7 @@ public class SecuredFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        // No initialization needed for this filter
+        
     }
 
     @Override
@@ -23,19 +23,20 @@ public class SecuredFilter implements Filter {
         HttpServletResponse resp = (HttpServletResponse) response;
         HttpSession session = req.getSession(false);
 
-        // If no session exists or user attribute is missing, redirect to login
+        
         if (session == null || session.getAttribute("user") == null) {
             resp.sendRedirect(req.getContextPath() + "/login");
             return;
         }
 
-        // User is authenticated, continue to requested resource
+        
         chain.doFilter(request, response);
     }
 
     @Override
     public void destroy() {
-        // No cleanup needed for this filter
+        
     }
 }
+
 
