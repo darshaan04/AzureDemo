@@ -4,3 +4,4 @@ A database called azuredemo was created along with a user "demouser" with a pass
 JdbcUserDao.java is used to add new users or search users with their username
 LoginServlet.java is used to handle login. if it is valid, it stores the users info or else displays error.
 PasswordUtil.java handles password verification
+The build folder was created when PasswordUtil.java and PasswordGenerator.java was compiled together and their classes are created in the build folder.
