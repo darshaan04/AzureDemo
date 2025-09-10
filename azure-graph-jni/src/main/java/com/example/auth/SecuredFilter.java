@@ -7,9 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-/**
- * SecuredFilter ensures that only authenticated users can access /secure paths.
- */
 @WebFilter(urlPatterns = {"/secure/*", "/secure"})
 public class SecuredFilter implements Filter {
 
@@ -41,3 +38,4 @@ public class SecuredFilter implements Filter {
         // No cleanup needed for this filter
     }
 }
+
