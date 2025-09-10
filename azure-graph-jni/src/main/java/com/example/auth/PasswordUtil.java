@@ -27,8 +27,6 @@ PBEKeySpec spec = new PBEKeySpec(password, salt, ITERATIONS, KEY_LENGTH);
 SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
 byte[] hash = skf.generateSecret(spec).getEncoded();
 
-
-// store as iterations:salt:hash (base64)
 return ITERATIONS + ":" + Base64.getEncoder().encodeToString(salt) + ":" + Base64.getEncoder().encodeToString(hash);
 } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
 throw new RuntimeException(e);
@@ -57,4 +55,5 @@ return diff == 0;
 return false;
 }
 }
+
 }
